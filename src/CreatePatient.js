@@ -10,10 +10,15 @@ const env = JSON.parse(fs.readFileSync(path.resolve(__dirname, '..', 'env.json')
 const config = {
   method: 'get',
   maxBodyLength: Infinity,
-  url: 'https://localhost:5484/DentalDesktop/WebService/SelectPatient',
+  url: 'https://localhost:5484/DentalDesktop/WebService/CreatePatient',
   params: {
     ClientId: env.ClientId,
     IntegrationId: argv.IntegrationId,
+    LastName: argv.LastName,
+    // FirstName: argv.FirstName,
+    DateOfBirth: argv.DateOfBirth,
+    PatientId: argv.PatientId,
+    MergePatient: true
   },
   headers: {
     'User-Agent': 'glamour.pms/1',
